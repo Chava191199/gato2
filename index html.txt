@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego del Gato</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Pantalla de Inicio -->
+  <section id="inicio" class="pantalla">
+    <h1>Bienvenido al Juego del Gato</h1>
+    <button onclick="mostrarPantalla('registro')">Iniciar</button>
+  </section>
+
+  <!-- Pantalla de Registro -->
+  <section id="registro" class="pantalla" style="display:none;">
+    <h2>Registro de Jugadores</h2>
+    <form id="formRegistro" onsubmit="registrarJugadores(event)">
+      <input type="text" id="jugador1" placeholder="Nombre del Jugador 1" required>
+      <input type="text" id="jugador2" placeholder="Nombre del Jugador 2" required>
+      <button type="submit">Comenzar Juego</button>
+    </form>
+  </section>
+
+  <!-- Pantalla de Juego -->
+  <section id="juego" class="pantalla" style="display:none;">
+    <h2 id="turnoActual">Turno de: </h2>
+    <div id="tablero">
+      <div class="celda" onclick="marcar(0)"></div>
+      <div class="celda" onclick="marcar(1)"></div>
+      <div class="celda" onclick="marcar(2)"></div>
+      <div class="celda" onclick="marcar(3)"></div>
+      <div class="celda" onclick="marcar(4)"></div>
+      <div class="celda" onclick="marcar(5)"></div>
+      <div class="celda" onclick="marcar(6)"></div>
+      <div class="celda" onclick="marcar(7)"></div>
+      <div class="celda" onclick="marcar(8)"></div>
+    </div>
+    <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
